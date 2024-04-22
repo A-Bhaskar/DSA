@@ -15,7 +15,7 @@ def dijkstra(adj,source):
   vis = set()
   dict[source] = 0
   heappush(heap,(0,source))
-  while heap:
+  while heap:    -----> o(V)
     curr, distance = heappop(heap)
     if curr in vis:
       continue
@@ -25,7 +25,7 @@ def dijkstra(adj,source):
         dis[neighbor] = weight+dis[curr]   
         heappush(heap,(dis[neighbor],neighbor)) ----> o(logV)
   '''
-  Total complexity is E*logV
+  Total complexity is (v + E*logV)
   it cant support negative weight edges
   if nodes are not present in dis that means they are  unreachable from source
   '''
