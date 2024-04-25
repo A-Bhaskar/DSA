@@ -77,10 +77,10 @@ def checkCycle(adj,vis,recStack,node):
   for v in adj[node]:
     if not vis[node]:
       if checkCycle(adj,vis,recStack,v):
-        return true
-    else recStack[v] is True:
+        return True
+    elif recStack[v] is True:
       return True
-  recStac[node] = False 
+  recStack[node] = False 
   return False
   
 

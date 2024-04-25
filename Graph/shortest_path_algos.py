@@ -5,25 +5,26 @@ To find the minimum distance between the source to other nodes in the weighted g
 '''
 from collections import defaultdict, deque
 from heapq import *
+import sys
 def dijkstra(adj,source):
   '''
   type adj: dict of list
   type source: int
   '''
-  dist = difaultdict(int)
+  dist = defaultdict(int)
   heap = []
   vis = set()
   dict[source] = 0
   heappush(heap,(0,source))
-  while heap:    -----> o(V)
+  while heap:    #-----> o(V)
     curr, distance = heappop(heap)
     if curr in vis:
       continue
     vis.add(curr)
-    for neighbor,weight in adj[curr]:   ----> o(E)
+    for neighbor,weight in adj[curr]:   #----> o(E)
       if neighbor not in dis or dis[neighbor]>weight+dis[curr]:
         dis[neighbor] = weight+dis[curr]   
-        heappush(heap,(dis[neighbor],neighbor)) ----> o(logV)
+        heappush(heap,(dis[neighbor],neighbor)) #----> o(logV)
   '''
   Total complexity is (v + E*logV)
   it cant support negative weight edges
@@ -65,7 +66,7 @@ def bellmanFord(edges,N,src):
   for u,v,w in edges:
     if dis[u]+w < dis[v]:
       return []
-   return dis   
+  return dis   
 
   ''' time complexity is v*E '''
 
@@ -92,12 +93,12 @@ def floydWarshall(graph,N):
       elif graph[i][j] != 0:
         dist[i][j] = graph[i][j]
 
-   for k in range(N):
+  for k in range(N):
      for i in range(N):
        for j in range(N):
-         if dist[i][j] > dist[i][k] + dist[k][j] and dis[i][k]!=sys.sizemax and dis[k][j]!=sys.sizemax:
-           dis[i][j] = dist[i][k] + dist[k][j]
-    return dis
+         if dist[i][j] > dist[i][k] + dist[k][j] and dist[i][k]!=sys.sizemax and dist[k][j]!=sys.sizemax:
+           dist[i][j] = dist[i][k] + dist[k][j]
+  return dist
 ''' Floyd Warshall is works good in dense edge graph because it will be running atmost v*v*v '''
 
 
