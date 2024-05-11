@@ -18,6 +18,7 @@ class MST:
         else:
             result = self.find(self.parent[v])
             self.parent[v] = result
+            return result
     def union(self,u,v):
         if self.rank[v] > self.rank[u]:
             self.parent[u] = v

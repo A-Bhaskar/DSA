@@ -1,0 +1,14 @@
+Bit Manipulation
+How to get most right set Bit for element x
+ (x&(x-1))^x  -> x-1 reverse the bits of number from right most bit to the right most end  ---> 100001000  will change 100000111 
+
+
+
+
+
+
+
+
+
+concept of multinomial coefficient
+

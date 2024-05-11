@@ -55,7 +55,7 @@ class disjointSet:
         pv = self.find(v)
 
         '''
-        if we use path compression find the time complexit will be ~ constant
+        if we use path compression find, the time complexity will be ~ constant
         '''
         if self.rank[pu]>self.rank[pv]:
             self.parent[pv] = pu

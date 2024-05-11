@@ -40,7 +40,7 @@ def isBipartite(graph):
 '''
 Detect Cycle in Undirected Graph
 manage vis set as well parent variable
-if adjecent element is visited and that element is node parent then cycle is detected
+if adjecent element is visited and that element is not parent then cycle is detected
 '''
 
 

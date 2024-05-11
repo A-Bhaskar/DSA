@@ -11,7 +11,7 @@ def dijkstra(adj,source):
   type adj: dict of list
   type source: int
   '''
-  dist = defaultdict(int)
+  dis = defaultdict(int)
   heap = []
   vis = set()
   dict[source] = 0
@@ -42,7 +42,7 @@ def dijkstra(adj,source):
 *Bellman-ford algorithm* 
 1. The algorithm overcomes the problem of dealing with negative edges
 2. It helps to detect -ve cycle is the graph.
-Algorithm states that to get the shortest path from src to all the nodes of the graph we need to relax the all edges n-1 
+Algorithm stats that to get the shortest path from src to all the nodes of the graph we need to relax the all edges n-1 
 where n is number of vertices, why n-1 ?? eg 1----->2------>3------->4------>5 since we wont be knowing the sequence of the edges 
                                                 1       1       1       1
 it will take n-1 time to relax all the edges optimally  [0, inf, inf, inf, inf] in first itration if edges are starting from right then only 1st vertex will
